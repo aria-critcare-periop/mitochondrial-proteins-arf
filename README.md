@@ -12,4 +12,8 @@ This repository contains:
 - the R code used for statistical analyses and figures;
 - the Mplus code used for latent class analysis.
 
+# Setup
 The analyses are based on publicly available proteomic data.
+Download the raw Olink NPX/clinical data (Zenodo) and the MitoCarta3.0 inventory, and place them in a `data/` subfolder before running the scripts.
+
+
