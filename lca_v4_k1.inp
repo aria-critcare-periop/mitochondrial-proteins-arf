@@ -1,0 +1,24 @@
+TITLE: MGH Olink COVID D0 v4 (no COVID filter, no Ang-2) - LCA k=1;
+DATA: FILE = "mgh_lca_input_v4.dat";
+VARIABLE:
+  NAMES =
+    id z_il6 z_cxcl8 z_tnfrsf1a z_proc z_serpine1
+    z_icam1 z_ager z_sftpd z_vwf acuity0c creat0c
+    neut0c acuitymax;
+  USEVARIABLES =
+    z_il6 z_cxcl8 z_tnfrsf1a z_proc z_serpine1 z_icam1
+    z_ager z_sftpd z_vwf acuity0c creat0c neut0c;
+  CATEGORICAL = acuity0c creat0c neut0c;
+  IDVARIABLE = id;
+  MISSING = ALL(-999);
+  CLASSES = c(1);
+ANALYSIS:
+  TYPE = MIXTURE;
+  STARTS = 400 100;
+  STITERATIONS = 30;
+
+OUTPUT: TECH14;
+SAVEDATA:
+  FILE = class_v4_k1.dat;
+  SAVE = CPROBABILITIES;
+
