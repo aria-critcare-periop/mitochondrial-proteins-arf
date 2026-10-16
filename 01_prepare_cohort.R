@@ -1,4 +1,4 @@
-# Inputs (place in data/): MGH_COVID_OLINK_NPX.txt and MGH_COVID_Clinical_Info.txt
+# Inputs from the public archive in data/
 # (Zenodo, https://doi.org/10.5281/zenodo.7076472, CC-BY 4.0)
 library(data.table)
 
@@ -36,7 +36,7 @@ for (i in seq_along(target_proteins)) {
 mplus_vars <- c("mplus_id", zvars, "Acuity_0_cat", "creat0c", "neut0c", "Acuity_max")
 dat <- copy(p4[, ..mplus_vars])
 for (v in c(zvars,"Acuity_0_cat","creat0c","neut0c","Acuity_max")) dat[is.na(get(v)), (v) := -999]
-fwrite(dat, "mgh_lca_input_v4.dat", sep=" ", col.names=FALSE, na="-999")
+fwrite(dat, "mgh_lca_input.dat", sep=" ", col.names=FALSE, na="-999")
 
-saveRDS(p4, "primary_sample_v4.rds")
+saveRDS(p4, "primary_sample.rds")
 cat("N =", nrow(p4), "\n")

@@ -1,5 +1,5 @@
-TITLE: MGH Olink COVID D0 v4 (no COVID filter, no Ang-2) - LCA k=5;
-DATA: FILE = "mgh_lca_input_v4.dat";
+TITLE: MGH Olink COVID D0 (no COVID filter, no Ang-2) - LCA k=5;
+DATA: FILE = "mgh_lca_input.dat";
 VARIABLE:
   NAMES =
     id z_il6 z_cxcl8 z_tnfrsf1a z_proc z_serpine1
@@ -20,6 +20,6 @@ ANALYSIS:
 
 OUTPUT: TECH14 TECH11;
 SAVEDATA:
-  FILE = class_v4_k5.dat;
+  FILE = class_k5.dat;
   SAVE = CPROBABILITIES;
 
